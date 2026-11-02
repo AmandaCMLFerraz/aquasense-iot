@@ -28,7 +28,10 @@ static SendResult apiPost(const String &path, const String &body) {
   int status = http.POST(body);
   http.end();
 
-  if (status >= 200 && status < 300) return SendResult::Accepted;
+  if (status >= 200 && status < 300) {
+    Serial.printf("[api] enviado %s (HTTP %d)\n", path.c_str(), status);
+    return SendResult::Accepted;
+  }
 
   Serial.printf("[api] HTTP %d\n", status);
   if (status >= 400 && status < 500 && status != 408 && status != 429) {

@@ -4,7 +4,7 @@
 #include <WiFi.h>
 
 #ifndef API_URL
-#define API_URL "http://10.0.0.113:3000"
+#define API_URL "https://aquasense-api-4r37.onrender.com"
 #endif
 
 #ifndef CALIBRATION_K
